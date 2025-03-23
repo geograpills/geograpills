@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geograpills - Geography Magazine</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2A6A8B',
+                            light: '#54C6EB'
+                        },
+                        category: {
+                            maps: '#E3F5FF',
+                            mapsText: '#0078D7',
+                            books: '#F8EBD8',
+                            booksText: '#C57B2A',
+                            films: '#EFE8FA',
+                            filmsText: '#6B44A9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+    <!-- Header -->
+    <header class="bg-primary sticky top-0 text-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <div class="text-4xl text-primary-light"><img src="" alt=""></div>
+                    <h1 class="text-3xl font-bold tracking-tight">
+                        Geogra<span class="text-primary-light">pills</span>
+                    </h1>
+                </div>
+                
+                <!-- Navigation -->
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                        <li>
+                            <a href="#" class="font-medium px-3 py-2 rounded hover:bg-white/10 transition duration-300">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="font-medium px-3 py-2 rounded hover:bg-white/10 transition duration-300">About</a>
+                        </li>
+                        <li class="relative group">
+                            <a href="#" class="font-medium px-3 py-2 rounded hover:bg-white/10 transition duration-300 flex items-center">
+                                Categories
+                                <span class="ml-1 text-xs">▼</span>
+                            </a>
+                            <div class="hidden group-hover:block absolute top-full left-0 bg-white min-w-[180px] shadow-lg rounded-md py-2 z-10">
+                                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Maps</a>
+                                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Books</a>
+                                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Films</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="font-medium px-3 py-2 rounded hover:bg-white/10 transition duration-300">Contact</a>
+                        </li>
+                        
+                        <!-- Language Switcher -->
+                        <li class="relative group ml-2">
+                            <button class="flex items-center bg-white/10 px-3 py-2 rounded font-medium hover:bg-white/20 transition duration-300">
+                                <span id="current-lang">EN</span>
+                                <span class="ml-1 text-xs">▼</span>
+                            </button>
+                            <div class="hidden group-hover:block absolute top-full right-0 md:right-0 bg-white min-w-[150px] shadow-lg rounded-md py-2 z-10">
+                                <div onclick="changeLanguage('en')" class="flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer language-option active-lang">
+                                    <span>English</span>
+                                </div>
+                                <div onclick="changeLanguage('es')" class="flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer language-option">
+                                    <span>Español</span>
+                                </div>
+                                <div onclick="changeLanguage('ca')" class="flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer language-option">
+                                    <span>Català</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white text-center mb-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Exploring Our World, One Article at a Time</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Geograpills brings you fascinating insights into geography, cartography, and cultural landscapes through expertly curated content.</p>
+            <a href="#" class="inline-block bg-primary-light text-white font-semibold px-6 py-3 rounded hover:bg-blue-400 transform hover:-translate-y-1 transition duration-300">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 mb-16">
+        <h2 class="text-3xl font-bold mb-8 pb-2 border-b-4 border-primary-light inline-block">Featured Articles</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <!-- Article 1 -->
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition duration-300">
+                <div class="h-48 bg-gray-200" style="background-image: url('/api/placeholder/600/400'); background-size: cover; background-position: center;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-category-maps text-category-mapsText mb-3">Maps</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 leading-tight">The Evolution of Cartography: From Ancient Maps to Digital Navigation</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">The history of mapmaking is as old as civilization itself. From the clay tablets of ancient Babylonia to the satellite imagery of Google Maps, humans have always sought to understand and document the world around them. This article explores how cartographic techniques...</p>
+                    <a href="#" class="inline-flex items-center font-semibold text-primary hover:underline">
+                        Read Article <span class="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition duration-300">
+                <div class="h-48 bg-gray-200" style="background-image: url('/api/placeholder/600/400'); background-size: cover; background-position: center;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-category-books text-category-booksText mb-3">Books</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 leading-tight">Five Essential Geography Books That Will Change Your Perspective</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Looking to expand your geographical knowledge? These five groundbreaking books offer profound insights into how geography shapes our lives, politics, and cultures. From Tim Marshall's "Prisoners of Geography" to Jared Diamond's "Guns, Germs, and Steel," these works...</p>
+                    <a href="#" class="inline-flex items-center font-semibold text-primary hover:underline">
+                        Read Article <span class="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition duration-300">
+                <div class="h-48 bg-gray-200" style="background-image: url('/api/placeholder/600/400'); background-size: cover; background-position: center;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-category-films text-category-filmsText mb-3">Films</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 leading-tight">How Documentary Films Are Reshaping Environmental Awareness</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Documentary filmmaking has become a powerful tool for environmental advocacy and geographical education. From breathtaking nature documentaries like "Planet Earth" to hard-hitting environmental exposés, these films are changing how we see our planet. This article examines the...</p>
+                    <a href="#" class="inline-flex items-center font-semibold text-primary hover:underline">
+                        Read Article <span class="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition duration-300">
+                <div class="h-48 bg-gray-200" style="background-image: url('/api/placeholder/600/400'); background-size: cover; background-position: center;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-category-maps text-category-mapsText mb-3">Maps</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 leading-tight">Mapping the Unseen: How Modern GIS Reveals Hidden Patterns</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Geographic Information Systems (GIS) have revolutionized how we analyze spatial data. From tracking disease outbreaks to monitoring climate change, these sophisticated mapping tools allow us to visualize complex relationships that would otherwise remain invisible. This article delves into...</p>
+                    <a href="#" class="inline-flex items-center font-semibold text-primary hover:underline">
+                        Read Article <span class="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition duration-300">
+                <div class="h-48 bg-gray-200" style="background-image: url('/api/placeholder/600/400'); background-size: cover; background-position: center;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-category-books text-category-booksText mb-3">Books</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 leading-tight">Travel Literature: Where Geography Meets Storytelling</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">The genre of travel writing sits at the fascinating intersection of geography, anthropology, and literature. From the ancient chronicles of Ibn Battuta to the modern narratives of Paul Theroux, travel writers have long helped us understand distant places and cultures. This exploration of...</p>
+                    <a href="#" class="inline-flex items-center font-semibold text-primary hover:underline">
+                        Read Article <span class="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition duration-300">
+                <div class="h-48 bg-gray-200" style="background-image: url('/api/placeholder/600/400'); background-size: cover; background-position: center;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-category-films text-category-filmsText mb-3">Films</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 leading-tight">Cinematic Landscapes: How Filmmakers Use Geography to Tell Stories</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">From the sweeping vistas of New Zealand in "The Lord of the Rings" to the urban landscapes of Tokyo in "Lost in Translation," geographic settings play a crucial role in cinema. This article explores how filmmakers use real and imagined landscapes to establish mood, advance plots, and...</p>
+                    <a href="#" class="inline-flex items-center font-semibold text-primary hover:underline">
+                        Read Article <span class="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="bg-primary text-white py-16 mt-12">
+        <div class="max-w-xl mx-auto text-center px-4">
+            <h3 class="text-3xl font-bold mb-4">Stay Updated</h3>
+            <p class="mb-8">Subscribe to our newsletter for the latest articles, features, and geographical insights delivered straight to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Your email address" required class="flex-1 px-4 py-3 rounded text-gray-800">
+                <button type="submit" class="bg-primary-light text-white font-semibold px-6 py-3 rounded hover:bg-blue-400 transition duration-300">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand Info -->
+                <div>
+                    <a href="#" class="text-2xl font-bold text-white mb-4 block">Geograpills</a>
+                    <p class="mb-4">Exploring our world through insightful articles, fascinating maps, and geographical wonders.</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary-light transition duration-300">f</a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary-light transition duration-300">t</a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary-light transition duration-300">in</a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-primary-light transition duration-300">ig</a>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-200">Maps</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Books</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Films</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Travel</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Environment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-200">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Write for Us</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li>Email: info@geograpills.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Address: 123 Geography Lane, Atlas City, GL 12345</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2025 Geograpills. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(langCode) {
+            // This function would handle changing the website language
+            // For a full implementation, you would need to use a translation system
+            
+            const currentLang = document.getElementById('current-lang');
+            const languageOptions = document.querySelectorAll('.language-option');
+            
+            // Update language button text
+            if (langCode === 'en') {
+                currentLang.textContent = 'EN';
+            } else if (langCode === 'es') {
+                currentLang.textContent = 'ES';
+            } else if (langCode === 'ca') {
+                currentLang.textContent = 'CA';
+            }
+            
+            // Update active class
+            languageOptions.forEach(option => {
+                option.classList.remove('bg-blue-50', 'active-lang');
+            });
+            
+            // Add active class to selected language
+            languageOptions.forEach(option => {
+                if (option.getAttribute('onclick').includes(langCode)) {
+                    option.classList.add('bg-blue-50', 'active-lang');
+                }
+            });
+            
+            // For demo purposes, log the language change
+            console.log(`Language changed to: ${langCode}`);
+            
+            // In a real implementation, you would load different language content here
+            // document.documentElement.lang = langCode;
+        }
+    </script>
+</body>
+</html>
